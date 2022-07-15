@@ -1,0 +1,38 @@
+version: '3.2'
+
+services:
+  node:
+    build: './node/'
+    container_name: fullcycle-node
+    entrypoint: dockerize -wait tcp://db:3306 -timeout 20s yarn start:dev
+    volumes:
+      - ./node/:/usr/app/node/
+    environment:
+      - APP_PORT=3333
+    ports:
+      - "3333:3333"
+    depends_on:
+      - db
+    networks: 
+      - fullcycle-network
+  db:
+    image: mysql:5.7
+    command: --innodb-use-native-aio=0
+    container_name: fullcycle-mysql
+    restart: always
+    tty: true
+    volumes: 
+      - ./db:/var/lib/mysql
+    environment: 
+      - MYSQL_DATABASE=nodedb
+      - MYSQL_ROOT_PASSWORD=root
+    ports:
+      - "3306:3306"
+    networks: 
+      - fullcycle-network
+networks:
+  fullcycle-network:
+    driver: bridge
+  
+
+

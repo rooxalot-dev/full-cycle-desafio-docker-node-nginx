@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Desafio: NGINX + Node + DB</title>
+</head>
+<body>
+    <div class="main-container">
+        <h1 class="greeting-message primary-text">
+            <%= initialMessage %>
+        </h1>
+        <form class="form-container" action="/" method="post">
+            <div class="input-group">
+                <label class="user-label" for="userInput">
+                    Usuário
+                    <input 
+                        type="text" 
+                        id="userInput" 
+                        name="username"
+                        placeholder="Insira seu nome aqui"
+                    />
+                </label>
+            </div>
+            <button type="submit" id="submit-button">Salvar</button>
+        </form>
+
+        <hr class="separator">
+
+        <div class="users-list">
+            <ul>
+                <% users.forEach(function(item, index){ %>
+                    <li> <%= item.username %> </li>
+                <% }) %>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

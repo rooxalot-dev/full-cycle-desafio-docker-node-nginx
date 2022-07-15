@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: #fff;
+    margin: 0;
+    font-size: 0.875rem;
+    font-family: Source Sans Pro,sans-serif;
+    font-weight: 400;
+    line-height: 1.43;
+    background-color: #1C1C1C;
+}
+
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+  font: 1rem sans-serif;
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+}
+
+button {
+    outline: 0;
+    border: 0;
+    cursor: pointer;
+    padding: 8px 16px;
+    border-radius: 4px;
+    background-color: #FFCD00;
+    color: #fff;
+    font-size: 1rem;
+
+    transition: background-color 0.2s ease-in-out;
+}
+
+button:hover {
+    background-color: #ffcc0091;
+}
+
+.primary-text {
+    color: #FFCD00
+}
+
+.main-container {
+    max-width: 1024px;
+    height: 80vh;
+    margin: 20px auto;
+    padding-top: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #303030;
+    border-radius: 20px;
+}
+
+.greeting-message {
+    font-size: 3rem;
+    text-transform: uppercase;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70%;
+}
+
+.separator {
+    width: 80%;
+    margin: 16px 0;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: row;
+}
+
+#userInput {
+    outline: 0;
+    padding: 10px;
+    margin: 6px 0px;
+    border: 0;
+    border-radius: 10px;
+    box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+}
+
+
+#submit-button {
+    margin-top: 16px;
+}

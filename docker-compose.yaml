@@ -16,9 +16,9 @@ services:
   node:
     build: './node/'
     container_name: fullcycle-node
-    entrypoint: dockerize -wait tcp://db:3306 -timeout 20s yarn start:dev
+    entrypoint: dockerize -wait tcp://db:3306 -timeout 30s yarn start:init
     volumes:
-      - ./node/:/usr/app/node/
+      - ./node:/usr/app/node
     environment:
       - APP_PORT=3333
     ports:

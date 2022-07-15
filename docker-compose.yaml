@@ -1,6 +1,18 @@
 version: '3.2'
 
 services:
+  nginx:
+    build: './nginx/'
+    container_name: fullcycle-nginx
+    volumes:
+      - ./nginx/:/etc/nginx/
+    ports:
+      - "8080:80"
+    depends_on:
+      - db
+      - node
+    networks: 
+      - fullcycle-network
   node:
     build: './node/'
     container_name: fullcycle-node
